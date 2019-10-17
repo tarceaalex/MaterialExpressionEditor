@@ -3,11 +3,11 @@
     Feel free to improve this library.
 
 # 1 Installation & Setup
-npm install material-custom-editor
-Import CustomEditorLibraryModule in app.module.ts (under @NgModule at imports: [...])
+    npm install material-custom-editor
+    Import CustomEditorLibraryModule in app.module.ts (under @NgModule at imports: [...])
 
 # 2 Usage
-    <lib-material-custom-editor>
+    HTML tag: <lib-material-custom-editor>
 
     @Input:
     - expression: string with an existing expression (optional) 
@@ -17,7 +17,9 @@ Import CustomEditorLibraryModule in app.module.ts (under @NgModule at imports: [
     - language: string with language code in compliance with ISO Language Code Table.
 
     @Output: 
-    - cancelEvent: event triggerd at cancellation. - submitEvent: event triggerd at submit with the expression string submitted.
+    - cancelEvent: event triggerd at cancellation. 
+    - submitEvent: event triggerd at submit with the expression string submitted.
+    
 # 4 Repository
     https://github.com/tarceaalex/MaterialExpressionEditor    
 

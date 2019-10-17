@@ -1,10 +1,27 @@
 {
-  "name": "material-custom-editor",  
-  "version": "0.0.8",
+  "name": "material-custom-editor",
+  "version": "0.1.0",
   "author": "Alexandru Tarcea",
   "description": "Custom editor for expressions using Angular Material",
-  "keywords": ["angular", "angular2", "material", "expression"],
-  "license": "YES",
+  "homepage": "https://github.com/tarceaalex/MaterialExpressionEditor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarceaalex/MaterialExpressionEditor.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "material",
+    "expression"
+  ],
+  "license": "NO",
+  "devDependencies": {
+    "@angular/common": "^8.2.8",
+    "@angular/core": "^8.2.8",
+    "@angular/material": "^8.2.2",
+    "@angular/flex-layout": "^8.0.0-beta.27",
+    "rxjs": "~6.4.0"
+  },
   "peerDependencies": {
     "@angular/common": "^8.2.8",
     "@angular/core": "^8.2.8",
