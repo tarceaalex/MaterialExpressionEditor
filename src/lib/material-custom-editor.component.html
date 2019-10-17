@@ -1,0 +1,90 @@
+<mat-card class="custom-form">
+    <mat-card-title>{{ 'expressionCalculator' | translate }}</mat-card-title>
+    <form>
+
+        <mat-form-field class="full-width">
+            <textarea matInput placeholder="{{'expression' | translate}}" name="textInput"
+                [(ngModel)]="newExpression"></textarea>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input type="text" placeholder="{{'customFunctions' | translate}}" aria-label="customFunctions" matInput
+                [formControl]="customFunctionsControl" [matAutocomplete]="auto1">
+            <mat-autocomplete #auto1="matAutocomplete" (optionSelected)="addValue($event.option.value);">
+                <mat-option *ngFor="let option of filteredCustomFunctions | async" [value]="option.name">
+                    {{option.name}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input type="text" placeholder="{{'fixedFunctions' | translate}}" aria-label="fixedFunctions" matInput
+                [formControl]="fixedFunctionsControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="addValue($event.option.value);">
+                <mat-option *ngFor="let option of filteredFixedFunctions | async" [value]="option.value">
+                    {{option.name}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input type="text" placeholder="{{'variables' | translate}}" aria-label="variablesArea" matInput
+                [formControl]="variablesControl" [matAutocomplete]="auto2">
+            <mat-autocomplete #auto2="matAutocomplete" (optionSelected)="addValue($event.option.value);">
+                <mat-option *ngFor="let option of filteredVariables | async" [value]="option.name">
+                    {{option.name}} - {{option.value}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+    <div class="full-width">
+        <mat-card class="calculator-mat-card">
+            <div>
+                <button mat-stroked-button (click)="addValue('<')">&#60;</button>
+                <button mat-stroked-button (click)="addValue('<=')">&#8804;</button>
+                <button mat-stroked-button (click)="addValue('>=')">&#8805;</button>
+                <button mat-stroked-button (click)="addValue('>')">&#62;</button>
+            </div>
+            <div>
+                <button mat-stroked-button (click)="addValue('==')">&#61;</button>
+                <button mat-stroked-button (click)="addValue('&&')">AND</button>
+                <button mat-stroked-button (click)="addValue('||')">OR</button>
+                <button mat-stroked-button (click)="addValue('!()')">NOT</button>
+            </div>
+            <div>
+                <button mat-stroked-button (click)="addValue('(')">(</button>
+                <button mat-stroked-button (click)="addValue(')')">)</button>
+                <button mat-stroked-button color="warn"
+                    (click)="newExpression = newExpression.slice(0, newExpression.length - 1);">&#8592;</button>
+                <button mat-stroked-button color="warn" (click)="clearValues()">AC</button>
+            </div>
+            <div>
+                <button mat-stroked-button (click)="addValue('7')">7</button>
+                <button mat-stroked-button (click)="addValue('8')">8</button>
+                <button mat-stroked-button (click)="addValue('9')">9</button>
+                <button mat-stroked-button (click)="addValue('/')">/</button>
+            </div>
+            <div>
+                <button mat-stroked-button (click)="addValue('4')">4</button>
+                <button mat-stroked-button (click)="addValue('5')">5</button>
+                <button mat-stroked-button (click)="addValue('6')">6</button>
+                <button mat-stroked-button (click)="addValue('%')">%</button>
+            </div>
+            <div>
+                <button mat-stroked-button (click)="addValue('1')">1</button>
+                <button mat-stroked-button (click)="addValue('2')">2</button>
+                <button mat-stroked-button (click)="addValue('3')">3</button>
+                <button mat-stroked-button (click)="addValue('*')">*</button>
+
+            </div>
+            <div>
+                <button mat-stroked-button (click)="addValue('0')">0</button>
+                <button mat-stroked-button (click)="addValue('.')">.</button>
+                <button mat-stroked-button (click)="addValue('+')">+</button>
+                <button mat-stroked-button (click)="addValue('-')">-</button>
+            </div>
+        </mat-card>
+    </div>
+    <br>
+    <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="cancel()">{{'cancel' | translate}}</button>
+        <button mat-raised-button color="primary" (click)="submit()">{{'submit' | translate}}</button>
+    </mat-card-actions>
+</mat-card>

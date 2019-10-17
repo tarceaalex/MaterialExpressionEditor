@@ -1,0 +1,22 @@
+.res {
+    text-align:right;
+}
+  
+.calculator-mat-card {
+    width: fit-content;
+    margin: auto;
+}
+  
+.custom-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+.full-width {
+    width: 100%;
+}
+  
+.td-custom-form {
+    padding-right: 8px;
+}
