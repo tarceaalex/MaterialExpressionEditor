@@ -8,8 +8,8 @@ import languageValuesEN from './translate.EN';
 })
 export class TranslateService {
     public languages = [
-        { id: 'ro-RO', value: 'RO' },
-        { id: 'en-GB', value: 'EN' }
+        { id: 'en-GB', value: 'EN' },
+        { id: 'ro-RO', value: 'RO' }
     ];
 
     private language: any;

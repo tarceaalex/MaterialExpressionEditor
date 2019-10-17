@@ -3,7 +3,6 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 import { GenericModel } from './models/generic.model';
-import { ExpressionModel } from './models/expression.model';
 import { MaterialCustomEditorService } from './material-custom-editor.service';
 import { TranslateService } from './translate/translate.service';
 
