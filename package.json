@@ -1,6 +1,6 @@
 {
   "name": "material-custom-editor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Alexandru Tarcea",
   "description": "Custom editor for expressions using Angular Material",
   "homepage": "https://github.com/tarceaalex/MaterialExpressionEditor",
